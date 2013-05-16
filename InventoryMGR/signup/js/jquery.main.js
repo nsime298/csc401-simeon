@@ -128,6 +128,32 @@ $(function(){
     });
 
 
+	//back button
+	$('.back').click(function(){
+		var container = $(this).parent('div'),
+			previous  = container.prev();
+	
+		switch(previous.attr('id')) {
+			case 'first_step' : $('#progress_text').html('0% Complete');
+								 $('#progress').css('width','0px');
+								 break;
+			case 'second_step': $('#progress_text').html('33% Complete');
+								 $('#progress').css('width','113px');
+								 break;
+	
+			case 'third_step' : $('#progress_text').html('66% Complete');
+								 $('#progress').css('width','226px');
+								 break;
+	
+			default: break;
+		}
+	
+		$(container).slideUp();
+		$(previous).slideDown();
+	});
+
+
+
     $('#submit_fourth').click(function(){
         //send information to server
 		/*<?php
@@ -138,11 +164,12 @@ $(function(){
  		 {
   			//echo "Failed to connect to MySQL: " . mysqli_connect_error();
 			alert('Error');
- 		 }
+ 		 }*/
 		//$sql = "INSERT INTO `inventoryMGR`.`student` (`studentID`, `fname`, `lname`, `email`, `class`, `major`, `password`) VALUES (\'220584\', \'Nate\', \'Simeon\', \'nsime298@gmail.com\', \'senior\', \'Computer Science\', \'Password\');";
+		$('form').unbind('submit').submit();
+        //alert('Data sent');
 		
-        alert('Data sent');
-		?>*/
+		
     });
 
 });

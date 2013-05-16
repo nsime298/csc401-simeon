@@ -79,17 +79,27 @@ input[type="submit"]:focus, input[type="button"]:focus { outline : none; }
         -moz-border-radius: 6px;
         -webkit-border-radius: 6px;
     }
-        #container input.submit {
-            background: url('../images/grnNextBtn.png') no-repeat;
-            border: none;
-            cursor: pointer;
-            width: 85px;
-            height: 38px;
-            position: relative;
-            bottom: 2px;
-            left: 655px;
-        }
-            #container input.submit:focus { border: none; }
+      
+		#container input.submit, #container input.back {
+    		background: url('../images/grnNextBtn.png') no-repeat;
+    		border: none;
+    		cursor: pointer;
+    		width: 85px;
+    		height: 38px;
+    		position: relative;
+    		bottom: 2px;
+    		left: 565px;
+		}
+    	#first_step input.submit { left: 650px; }
+
+		#container input.back{
+    		background: url('../images/grnBackBtn.png') no-repeat;
+    		left: 20px;
+		}
+    	#container input.back:focus { border: none; }
+
+		
+        #container input.submit:focus { border: none; }
         
         #container input.send{ background: url('../images/grnSend.png') no-repeat; }
             
